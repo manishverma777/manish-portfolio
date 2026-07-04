@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send, Mail, MapPin, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
+import { Send, Mail, MapPin, Phone, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa6'
 import Section from '../ui/Section'
 import SectionHeading from '../ui/SectionHeading'
 import Button from '../ui/Button'
@@ -156,6 +157,37 @@ function Contact() {
               <span className="block font-medium text-content">{owner.location}</span>
             </span>
           </div>
+          {owner.phones?.map((p) => (
+            <div key={p.tel} className="glass-card flex items-center gap-4 rounded-2xl p-5">
+              <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-surface-2 text-primary">
+                <Phone className="size-5" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-sm text-muted">Phone</span>
+                <span className="block font-medium text-content">{p.display}</span>
+              </span>
+              <div className="ml-auto flex gap-2">
+                <motion.a
+                  href={`tel:${p.tel}`}
+                  aria-label={`Call ${p.display}`}
+                  whileHover={{ y: -3 }}
+                  className="flex size-10 items-center justify-center rounded-xl border border-border text-muted transition-colors hover:border-primary hover:text-primary"
+                >
+                  <Phone className="size-4.5" />
+                </motion.a>
+                <motion.a
+                  href={`https://wa.me/${p.wa}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`WhatsApp ${p.display}`}
+                  whileHover={{ y: -3 }}
+                  className="flex size-10 items-center justify-center rounded-xl border border-border text-muted transition-colors hover:border-[#25D366] hover:text-[#25D366]"
+                >
+                  <FaWhatsapp className="size-5" />
+                </motion.a>
+              </div>
+            </div>
+          ))}
           <div className="glass-card rounded-2xl p-5">
             <span className="mb-3 block text-sm text-muted">Find me online</span>
             <div className="flex gap-2">

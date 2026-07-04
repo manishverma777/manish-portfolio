@@ -18,6 +18,11 @@ export const siteConfig = {
       'Frontend Developer with 3 years of experience building high-performance web, mobile and desktop applications with clean, delightful interfaces.',
     location: 'Mirzapur, Uttar Pradesh, India',
     email: 'ram.surat.web@gmail.com',
+    // Phone numbers used for Call (tel:) and WhatsApp (wa.me) links.
+    phones: [
+      { display: '+91 85450 20686', tel: '+918545020686', wa: '918545020686' },
+      { display: '+91 97938 14970', tel: '+919793814970', wa: '919793814970' }
+    ],
     resumeUrl: 'https://drive.google.com/file/d/1hr5Y2-LUaD6yUALZBDspRQQ0_NbYYZX1/view',
     resumeDownloadUrl:
       'https://drive.google.com/uc?export=download&id=1hr5Y2-LUaD6yUALZBDspRQQ0_NbYYZX1',

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowUp } from 'lucide-react'
+import { ArrowUp, Phone } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa6'
 import { navLinks, siteConfig } from '../../utils/config'
 import { socials } from '../../utils/data'
 import ProfileMark from '../ui/ProfileMark'
@@ -67,6 +68,26 @@ function Footer() {
                     {siteConfig.owner.email}
                   </a>
                 </li>
+                {siteConfig.owner.phones?.map((p) => (
+                  <li key={p.tel} className="flex items-center gap-3">
+                    <a
+                      href={`tel:${p.tel}`}
+                      className="inline-flex items-center gap-1.5 hover:text-primary"
+                    >
+                      <Phone className="size-3.5" />
+                      {p.display}
+                    </a>
+                    <a
+                      href={`https://wa.me/${p.wa}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`WhatsApp ${p.display}`}
+                      className="text-muted transition-colors hover:text-[#25D366]"
+                    >
+                      <FaWhatsapp className="size-4" />
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
