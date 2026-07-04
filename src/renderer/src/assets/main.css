@@ -1,0 +1,420 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   Tailwind theme token mapping.
+   These map Tailwind utility colors (bg-surface, text-primary…)
+   to runtime CSS variables that we swap per theme + mode.
+   ============================================================ */
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-content: var(--text);
+  --color-muted: var(--text-muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-fg: var(--primary-fg);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  /* Font is swapped per theme via --app-font (see palettes below). */
+  --font-sans: var(--app-font);
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+  --animate-blob: blob 16s ease-in-out infinite;
+}
+
+/* ============================================================
+   PER-THEME TYPEFACES — each theme gets its own professional
+   font family; changing the theme restyles the typography too.
+   ============================================================ */
+:root {
+  --font-fallback: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --app-font: 'Sora Variable', var(--font-fallback);
+}
+[data-theme='aurora'] {
+  --app-font: 'Sora Variable', var(--font-fallback);
+}
+[data-theme='emerald'] {
+  --app-font: 'Plus Jakarta Sans Variable', var(--font-fallback);
+}
+[data-theme='sunset'] {
+  --app-font: 'Outfit Variable', var(--font-fallback);
+}
+[data-theme='ocean'] {
+  --app-font: 'DM Sans Variable', var(--font-fallback);
+}
+[data-theme='rose'] {
+  --app-font: 'Manrope Variable', var(--font-fallback);
+}
+
+/* ============================================================
+   GLASS STYLES — configurable frosted-glass appearance applied
+   app-wide via [data-glass] on <html> (see preferences panel).
+   Vars: blur, saturation, surface opacity (glass + cards),
+   border opacity, shadow.
+   ============================================================ */
+:root,
+[data-glass='frosted'] {
+  --glass-blur: 14px;
+  --glass-saturate: 130%;
+  --glass-opacity: 72%;
+  --glass-card-opacity: 78%;
+  --glass-border: 70%;
+  --glass-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.5);
+}
+[data-glass='liquid'] {
+  --glass-blur: 26px;
+  --glass-saturate: 190%;
+  --glass-opacity: 55%;
+  --glass-card-opacity: 60%;
+  --glass-border: 55%;
+  --glass-shadow: 0 18px 50px -24px color-mix(in srgb, var(--primary) 55%, transparent);
+}
+[data-glass='clear'] {
+  --glass-blur: 7px;
+  --glass-saturate: 140%;
+  --glass-opacity: 38%;
+  --glass-card-opacity: 46%;
+  --glass-border: 42%;
+  --glass-shadow: 0 8px 24px -18px rgba(0, 0, 0, 0.45);
+}
+[data-glass='tinted'] {
+  --glass-blur: 16px;
+  --glass-saturate: 120%;
+  --glass-opacity: 88%;
+  --glass-card-opacity: 92%;
+  --glass-border: 85%;
+  --glass-shadow: 0 12px 34px -20px rgba(0, 0, 0, 0.55);
+}
+[data-glass='solid'] {
+  --glass-blur: 0px;
+  --glass-saturate: 100%;
+  --glass-opacity: 100%;
+  --glass-card-opacity: 100%;
+  --glass-border: 100%;
+  --glass-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================
+   THEME PALETTES — 5 white-label themes, each with light + dark.
+   Swap by setting data-theme + data-mode on <html>.
+   Change the default in utils/config.js for white-labeling.
+   ============================================================ */
+
+/* ---- Aurora (indigo / violet) — DEFAULT ---- */
+[data-theme='aurora'][data-mode='dark'],
+[data-mode='dark']:not([data-theme]) {
+  --bg: #0b0b16;
+  --bg-soft: #12122a;
+  --surface: #16162b;
+  --surface-2: #1e1e3a;
+  --border: #2a2a4a;
+  --text: #ececff;
+  --text-muted: #9a9ac0;
+  --primary: #7c5cff;
+  --primary-hover: #6a48f5;
+  --primary-fg: #ffffff;
+  --secondary: #22d3ee;
+  --accent: #f472b6;
+}
+[data-theme='aurora'][data-mode='light'] {
+  --bg: #f6f6ff;
+  --bg-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f0f0fb;
+  --border: #e2e2f5;
+  --text: #16162b;
+  --text-muted: #5b5b7a;
+  --primary: #6a48f5;
+  --primary-hover: #5636e0;
+  --primary-fg: #ffffff;
+  --secondary: #0891b2;
+  --accent: #db2777;
+}
+
+/* ---- Emerald (green / teal) ---- */
+[data-theme='emerald'][data-mode='dark'] {
+  --bg: #06120f;
+  --bg-soft: #0a1f18;
+  --surface: #0c2019;
+  --surface-2: #123328;
+  --border: #1c4a3a;
+  --text: #e6fff5;
+  --text-muted: #8fc7b3;
+  --primary: #10d98f;
+  --primary-hover: #0bbd7c;
+  --primary-fg: #04231a;
+  --secondary: #38bdf8;
+  --accent: #a3e635;
+}
+[data-theme='emerald'][data-mode='light'] {
+  --bg: #f0fdf7;
+  --bg-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #e7fbf1;
+  --border: #cdeede;
+  --text: #05271d;
+  --text-muted: #3f6b5b;
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-fg: #ffffff;
+  --secondary: #0284c7;
+  --accent: #65a30d;
+}
+
+/* ---- Sunset (orange / rose) ---- */
+[data-theme='sunset'][data-mode='dark'] {
+  --bg: #16090a;
+  --bg-soft: #24100f;
+  --surface: #271211;
+  --surface-2: #391a18;
+  --border: #4d2523;
+  --text: #fff0ec;
+  --text-muted: #cfa79e;
+  --primary: #ff6a3d;
+  --primary-hover: #f2542d;
+  --primary-fg: #200806;
+  --secondary: #ffb020;
+  --accent: #ff4d6d;
+}
+[data-theme='sunset'][data-mode='light'] {
+  --bg: #fff6f2;
+  --bg-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #ffece4;
+  --border: #ffd7c9;
+  --text: #33130d;
+  --text-muted: #8a5546;
+  --primary: #ea580c;
+  --primary-hover: #c2410c;
+  --primary-fg: #ffffff;
+  --secondary: #d97706;
+  --accent: #e11d48;
+}
+
+/* ---- Ocean (blue / cyan) ---- */
+[data-theme='ocean'][data-mode='dark'] {
+  --bg: #061019;
+  --bg-soft: #0a1c2e;
+  --surface: #0b1f33;
+  --surface-2: #122d47;
+  --border: #1d4160;
+  --text: #e7f4ff;
+  --text-muted: #90b4d0;
+  --primary: #38a3ff;
+  --primary-hover: #1e8ef0;
+  --primary-fg: #04121f;
+  --secondary: #22d3ee;
+  --accent: #818cf8;
+}
+[data-theme='ocean'][data-mode='light'] {
+  --bg: #f0f8ff;
+  --bg-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #e4f1fc;
+  --border: #cbe3f7;
+  --text: #06253d;
+  --text-muted: #416285;
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-fg: #ffffff;
+  --secondary: #0891b2;
+  --accent: #6366f1;
+}
+
+/* ---- Rose (pink / fuchsia) ---- */
+[data-theme='rose'][data-mode='dark'] {
+  --bg: #14060f;
+  --bg-soft: #230c1c;
+  --surface: #260d1f;
+  --surface-2: #38152e;
+  --border: #4d1f40;
+  --text: #ffecf7;
+  --text-muted: #cf9ec0;
+  --primary: #ff5ca8;
+  --primary-hover: #f43f96;
+  --primary-fg: #22060f;
+  --secondary: #c084fc;
+  --accent: #fb7185;
+}
+[data-theme='rose'][data-mode='light'] {
+  --bg: #fff5fa;
+  --bg-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #ffe6f1;
+  --border: #ffcfe3;
+  --text: #3a0c26;
+  --text-muted: #8a4d70;
+  --primary: #db2777;
+  --primary-hover: #be185d;
+  --primary-fg: #ffffff;
+  --secondary: #9333ea;
+  --accent: #e11d48;
+}
+
+/* ============================================================
+   Base reset + globals
+   ============================================================ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.5s ease,
+      color 0.5s ease;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  ul {
+    list-style: none;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-soft);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--surface-2);
+    border-radius: 999px;
+    border: 2px solid var(--bg-soft);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-fg);
+  }
+}
+
+/* ============================================================
+   Reusable helper classes (component layer so Tailwind
+   utilities can still override them when needed)
+   ============================================================ */
+@layer components {
+  .text-gradient {
+    background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass {
+    background: color-mix(in srgb, var(--surface) var(--glass-opacity), transparent);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    border: 1px solid color-mix(in srgb, var(--border) var(--glass-border), transparent);
+    box-shadow: var(--glass-shadow);
+  }
+
+  /* Glassy content card — obeys the same glass preference. */
+  .glass-card {
+    background: color-mix(in srgb, var(--surface) var(--glass-card-opacity), transparent);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    border: 1px solid color-mix(in srgb, var(--border) var(--glass-border), transparent);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glow {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--primary) 30%, transparent),
+      0 12px 40px -12px color-mix(in srgb, var(--primary) 45%, transparent);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in srgb, var(--border) 45%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--border) 45%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 44px 44px;
+  }
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
