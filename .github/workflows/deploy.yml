@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       # Skip the Electron postinstall (native rebuild) — not needed for the web build.
@@ -36,6 +36,9 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          # Automatically enable GitHub Pages (Actions source) if not already on.
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
