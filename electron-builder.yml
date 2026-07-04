@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: desktop-app
+appId: com.ramsurat.app
+productName: Ram
 directories:
   buildResources: build
 files:
@@ -11,11 +11,11 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: desktop-app
+  executableName: Ram
 nsis:
-  artifactName: ${name}-${version}-setup.${ext}
-  shortcutName: ${productName}
-  uninstallDisplayName: ${productName}
+  artifactName: Ram-Setup-${version}.${ext}
+  shortcutName: Ram
+  uninstallDisplayName: Ram
   createDesktopShortcut: always
 mac:
   entitlementsInherit: build/entitlements.mac.plist
