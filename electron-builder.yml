@@ -13,7 +13,7 @@ asarUnpack:
 win:
   executableName: Ram
 nsis:
-  artifactName: Ram-Setup-${version}.${ext}
+  artifactName: Ram-Setup.${ext}
   shortcutName: Ram
   uninstallDisplayName: Ram
   createDesktopShortcut: always

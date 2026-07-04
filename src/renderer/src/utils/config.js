@@ -26,6 +26,10 @@ export const siteConfig = {
     resumeUrl: 'https://drive.google.com/file/d/1hr5Y2-LUaD6yUALZBDspRQQ0_NbYYZX1/view',
     resumeDownloadUrl:
       'https://drive.google.com/uc?export=download&id=1hr5Y2-LUaD6yUALZBDspRQQ0_NbYYZX1',
+    // Windows installer, hosted as a GitHub Release asset (fixed tag + name).
+    // Rebuilt & replaced in-place by `npm run release:win`, so this URL is permanent.
+    desktopDownloadUrl:
+      'https://github.com/ram-profile/ram.github.io/releases/download/installer-latest/Ram-Setup.exe',
     available: true
   },
   // Rotating job titles shown in the hero heading.

@@ -44,6 +44,7 @@ import {
   SiXcode
 } from 'react-icons/si'
 import { GithubIcon, LinkedinIcon } from '../components/ui/BrandIcons'
+import { siteConfig } from './config'
 
 /** Quick stats shown in the hero / about. */
 export const stats = [
@@ -146,7 +147,7 @@ export const projects = [
     featured: true,
     live: null,
     source: 'https://github.com/masaiff210880',
-    download: '#'
+    download: siteConfig.owner.desktopDownloadUrl
   },
   {
     title: 'Trivida Corporation',
