@@ -70,7 +70,10 @@ function ThemeSwitcher() {
               {THEMES.map((t) => (
                 <button
                   key={t.key}
-                  onClick={() => changeTheme(t.key)}
+                  onClick={() => {
+                    changeTheme(t.key)
+                    setOpen(false)
+                  }}
                   className={cn(
                     'flex items-center justify-between rounded-xl border px-3 py-2.5 transition-all',
                     theme === t.key
@@ -108,7 +111,10 @@ function ThemeSwitcher() {
               {GLASS_STYLES.map((g) => (
                 <button
                   key={g.key}
-                  onClick={() => changeGlass(g.key)}
+                  onClick={() => {
+                    changeGlass(g.key)
+                    setOpen(false)
+                  }}
                   className={cn(
                     'flex items-center justify-between rounded-xl border px-3 py-2.5 transition-all',
                     glass === g.key
