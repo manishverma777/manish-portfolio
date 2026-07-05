@@ -5,44 +5,40 @@
  * Change these values to re-brand the entire app in one place.
  */
 export const siteConfig = {
-  brand: 'Aarav.dev',
-  logoInitials: 'A',
+  brand: 'Manish.dev',
+  logoInitials: 'M',
   // Profile photo shown on the intro + hero. Falls back to the name logo
   // (logoInitials) automatically if the image can't be loaded.
   // Self-hosted from src/renderer/public so it works offline (desktop app)
   // and is reliably fetchable by social/search crawlers (web build).
   profileImage: './profile.png',
   owner: {
-    name: 'Ram Surat',
-    role: 'Frontend Developer',
+    name: 'Manish Kumar',
+    role: 'Software Developer (React Native & Web)',
     tagline:
-      'Frontend Developer with 3 years of experience building high-performance web, mobile and desktop applications with clean, delightful interfaces.',
-    location: 'Mirzapur, Uttar Pradesh, India',
-    email: 'ram.surat.web@gmail.com',
+      'Software Developer with 2 years of experience building production-ready React Native and React.js applications, with strong skills in Redux Toolkit, API integration and payment integration.',
+    location: 'Sri Ganganagar, Rajasthan, India',
+    email: 'royalmanish714@gmail.com',
     // Phone numbers used for Call (tel:) and WhatsApp (wa.me) links.
     phones: [
-      { display: '+91 85450 20686', tel: '+918545020686', wa: '918545020686' },
-      { display: '+91 97938 14970', tel: '+919793814970', wa: '919793814970' }
+      { display: '+91 7852860878', tel: '+917852860878', wa: '917852860878' },
+      { display: '+91 7852860878', tel: '+917852860878', wa: '917852860878' }
     ],
-    resumeUrl: 'https://drive.google.com/file/d/1hr5Y2-LUaD6yUALZBDspRQQ0_NbYYZX1/view',
-    resumeDownloadUrl:
-      'https://drive.google.com/uc?export=download&id=1hr5Y2-LUaD6yUALZBDspRQQ0_NbYYZX1',
-    // Windows installer, hosted as a GitHub Release asset (fixed tag + name).
-    // Rebuilt & replaced in-place by `npm run release:win`, so this URL is permanent.
-    desktopDownloadUrl:
-      'https://github.com/ram-profile/ram.github.io/releases/download/installer-latest/Ram-Setup.exe',
+    resumeUrl: './Manish_Kumar_Resume.pdf',
+    resumeDownloadUrl: './Manish_Kumar_Resume.pdf',
+    desktopDownloadUrl: null,
     available: true
   },
   // Rotating job titles shown in the hero heading.
   roles: [
-    'Frontend Developer',
-    'Frontend Engineer',
+    'React Native Developer',
     'React.js Developer',
-    'Mobile App Developer',
-    'Desktop App Developer'
+    'Frontend Developer',
+    'Software Developer',
+    'Web Application Developer'
   ],
   // Short professional title shown in the header next to the avatar.
-  roleShort: 'Frontend Developer',
+  roleShort: 'React Native | React.js Developer',
   // Default look on first launch (white-label defaults).
   defaultTheme: 'aurora', // 'aurora' | 'emerald' | 'sunset' | 'ocean' | 'rose'
   defaultMode: 'dark', // 'light' | 'dark'
@@ -52,7 +48,7 @@ export const siteConfig = {
   // Messages from the contact form are emailed to this address.
   // NOTE: the very first submission triggers a one-time activation email
   // to this inbox; click the link once to start receiving messages.
-  contactRecipient: 'ram.surat.web@gmail.com',
+  contactRecipient: 'royalmanish714@gmail.com',
 
   // Persisted keys in localStorage.
   storageKeys: {

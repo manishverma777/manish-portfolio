@@ -11,8 +11,8 @@ function About() {
     <Section id="about">
       <SectionHeading
         eyebrow="About me"
-        title="Frontend Developer crafting fast, reliable products"
-        subtitle="3 years turning ideas into production-grade web, mobile and desktop applications."
+        title="React Native & React.js Developer crafting reliable products"
+        subtitle="2 years building mobile and web applications with API integration, payment integration and clean UI."
       />
 
       <div className="mt-10 grid items-center gap-10 lg:grid-cols-2">
@@ -24,31 +24,33 @@ function About() {
           className="space-y-5 text-muted"
         >
           <p>
-            I&apos;m {siteConfig.owner.name}, a Frontend Developer with 3 years of hands-on
-            experience designing and shipping high-performance web, mobile and desktop applications.
-            I work primarily across the React ecosystem &mdash; React.js, Next.js, React Native and
-            Electron.js &mdash; building responsive, accessible and pixel-perfect user interfaces.
+            I&apos;m {siteConfig.owner.name}, a Software Developer with 2 years of hands-on
+            experience building React Native mobile apps and React.js web applications. I&apos;ve
+            worked on live products including Health Buddy, Petvesta, Chef App, FMO App,
+            Construction Web Portal and Car Dekho App.
           </p>
           <p>
             I care about clean, maintainable code, reusable component systems, performance and
-            smooth micro-interactions. Comfortable across the full MERN stack, I collaborate closely
-            with designers and backend engineers to deliver polished features end to end &mdash;
-            from the UI down to Node.js, Express and MongoDB APIs.
+            smooth user experiences. I&apos;m comfortable with Redux Toolkit, Material UI, API
+            integration, Stripe/payment integration, Android Studio setup, splash screen
+            configuration and practical debugging across mobile and web environments.
           </p>
           <div className="flex flex-wrap gap-2 pt-2">
             {[
               'Clean, scalable code',
               'Performance-first',
               'Reusable components',
-              'Cross-platform',
+              'Cross-platform UI',
+              'Redux Toolkit',
+              'API Integration',
+              'Payment Integration',
+              'Stripe API',
+              'Android Studio',
+              'Material UI',
               'Team player',
-              'Team Lead',
-              'Code Review',
-              'Client Handling',
               'Performance Optimization',
-              'Agile / Scrum',
-              'Mentoring',
-              'Responsive & Accessible UI'
+              'Responsive Dashboard UI',
+              'Technical Troubleshooting'
             ].map((t) => (
               <span
                 key={t}

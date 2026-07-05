@@ -169,14 +169,14 @@ function Hero() {
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <Sparkles className="size-4 text-primary" /> 3+ yrs
+              <Sparkles className="size-4 text-primary" /> 2+ yrs
             </motion.div>
             <motion.div
               className="glass absolute -bottom-3 left-1/2 z-20 -translate-x-1/2 rounded-xl px-3 py-2 text-sm font-medium text-content"
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             >
-              25+ projects
+              6+ projects
             </motion.div>
           </motion.div>
         </div>

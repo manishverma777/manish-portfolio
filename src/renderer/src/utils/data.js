@@ -1,6 +1,5 @@
 import {
   Mail,
-  Globe,
   Code2,
   Server,
   Palette,
@@ -8,98 +7,87 @@ import {
   Users,
   Trophy,
   Wrench,
-  GraduationCap,
-  ClipboardList,
-  Package,
-  ShoppingBag,
-  Truck,
+  Smartphone,
+  Stethoscope,
+  UtensilsCrossed,
+  PawPrint,
+  TrendingUp,
   LayoutDashboard,
-  HeartPulse,
-  Pill,
-  Plane,
-  Sparkles,
-  Monitor,
-  Building2
+  HardHat,
+  Car,
+  CreditCard,
+  MonitorCog
 } from 'lucide-react'
 import {
   SiReact,
-  SiNextdotjs,
   SiTypescript,
   SiJavascript,
   SiHtml5,
   SiCss,
-  SiTailwindcss,
-  SiBootstrap,
   SiMui,
-  SiAngular,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiFirebase,
-  SiDocker,
-  SiElectron,
-  SiFigma,
   SiPostman,
-  SiGithubcopilot,
-  SiXcode
+  SiRedux,
+  SiStripe,
+  SiAndroidstudio,
+  SiGit,
+  SiLinux
 } from 'react-icons/si'
-import { GithubIcon, LinkedinIcon } from '../components/ui/BrandIcons'
+import { LinkedinIcon } from '../components/ui/BrandIcons'
 import { siteConfig } from './config'
 
 /** Quick stats shown in the hero / about. */
 export const stats = [
-  { label: 'Years Experience', value: '3+', icon: Rocket },
-  { label: 'Projects Shipped', value: '25+', icon: Trophy },
-  { label: 'Web / Mobile / Desktop', value: '3', icon: Users },
-  { label: 'Tools & Technologies', value: '20+', icon: Wrench }
+  { label: 'Years Experience', value: '2+', icon: Rocket },
+  { label: 'Live Projects', value: '6+', icon: Trophy },
+  { label: 'Mobile & Web Apps', value: '2', icon: Users },
+  { label: 'Core Technologies', value: '12+', icon: Wrench }
 ]
 
-/** Skill groups. `level` is 0–100 for the animated bars. */
+/** Skill groups. `level` is 0-100 for the animated bars. */
 export const skillGroups = [
   {
     title: 'Frontend',
     icon: Code2,
     skills: [
-      { name: 'React.js', level: 95 },
-      { name: 'Next.js', level: 90 },
-      { name: 'React Native', level: 86 },
-      { name: 'Electron.js', level: 88 },
-      { name: 'Angular.js', level: 50 },
-      { name: 'JavaScript', level: 93 },
+      { name: 'React.js', level: 92 },
+      { name: 'React Native', level: 94 },
       { name: 'TypeScript', level: 88 },
-      { name: 'HTML & CSS', level: 95 }
+      { name: 'JavaScript', level: 90 },
+      { name: 'HTML & CSS', level: 88 },
+      { name: 'Responsive Dashboard Design', level: 86 }
+    ]
+  },
+  {
+    title: 'State, API & Payments',
+    icon: CreditCard,
+    skills: [
+      { name: 'Redux Toolkit', level: 90 },
+      { name: 'API Integration', level: 91 },
+      { name: 'Payment Integration', level: 88 },
+      { name: 'Stripe API Integration', level: 86 },
+      { name: 'Real-time Data Updates', level: 82 }
     ]
   },
   {
     title: 'Styling & UI',
     icon: Palette,
     skills: [
-      { name: 'Tailwind CSS', level: 93 },
-      { name: 'Bootstrap', level: 85 },
-      { name: 'Material UI', level: 84 },
-      { name: 'Figma', level: 82 }
+      { name: 'Material UI (MUI)', level: 88 },
+      { name: 'Reusable Components', level: 90 },
+      { name: 'Cross-platform UI', level: 88 },
+      { name: 'Splash Screen Configuration', level: 82 }
     ]
   },
   {
-    title: 'Backend & Database',
-    icon: Server,
+    title: 'Tools & Platform',
+    icon: Smartphone,
     skills: [
-      { name: 'Node.js', level: 85 },
-      { name: 'Express.js', level: 84 },
-      { name: 'MongoDB', level: 82 },
-      { name: 'Firebase', level: 86 }
-    ]
-  },
-  {
-    title: 'Tools & AI',
-    icon: Rocket,
-    skills: [
-      { name: 'Docker', level: 78 },
-      { name: 'Postman', level: 88 },
-      { name: 'Xcode', level: 72 },
-      { name: 'GitHub Copilot', level: 92 },
-      { name: 'Cursor AI', level: 88 },
-      { name: 'Antigravity', level: 75 }
+      { name: 'Android Studio', level: 84 },
+      { name: 'ADB', level: 80 },
+      { name: 'Git', level: 86 },
+      { name: 'Postman', level: 84 },
+      { name: 'Linux (Kali)', level: 78 },
+      { name: 'Virtual Machine Management', level: 76 }
     ]
   }
 ]
@@ -110,26 +98,20 @@ export const skillGroups = [
  */
 export const techStack = [
   { name: 'React.js', icon: SiReact, color: '#61DAFB' },
-  { name: 'Next.js', icon: SiNextdotjs, color: null },
   { name: 'React Native', icon: SiReact, color: '#61DAFB' },
-  { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
   { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
-  { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-  { name: 'CSS', icon: SiCss, color: '#663399' },
-  { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#38BDF8' },
-  { name: 'Bootstrap', icon: SiBootstrap, color: '#7952B3' },
+  { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+  { name: 'Redux Toolkit', icon: SiRedux, color: '#764ABC' },
+  { name: 'API Integration', icon: Server, color: '#22C55E' },
+  { name: 'Payment Integration', icon: CreditCard, color: '#14B8A6' },
+  { name: 'Stripe API', icon: SiStripe, color: '#635BFF' },
   { name: 'Material UI', icon: SiMui, color: '#007FFF' },
-  { name: 'Angular.js', icon: SiAngular, color: '#DD0031' },
-  { name: 'Node.js', icon: SiNodedotjs, color: '#5FA04E' },
-  { name: 'Express.js', icon: SiExpress, color: null },
-  { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-  { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
-  { name: 'Docker', icon: SiDocker, color: '#2496ED' },
-  { name: 'Electron.js', icon: SiElectron, color: '#47848F' },
-  { name: 'Xcode', icon: SiXcode, color: '#147EFB' },
+  { name: 'Android Studio', icon: SiAndroidstudio, color: '#3DDC84' },
   { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
-  { name: 'GitHub Copilot', icon: SiGithubcopilot, color: null },
-  { name: 'Figma', icon: SiFigma, color: '#F24E1E' }
+  { name: 'Git', icon: SiGit, color: '#F05032' },
+  { name: 'Linux', icon: SiLinux, color: null },
+  { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
+  { name: 'CSS3', icon: SiCss, color: '#663399' }
 ]
 
 /**
@@ -138,204 +120,135 @@ export const techStack = [
  */
 export const projects = [
   {
-    title: 'Portfolio Desktop App',
+    title: 'Health Buddy',
     description:
-      'This very application — a fully animated, multi-theme portfolio built as a cross-platform desktop app with Electron, React, Vite and Tailwind CSS.',
-    tags: ['Electron', 'React', 'Vite', 'Tailwind CSS'],
-    icon: Monitor,
-    category: 'desktop',
+      'Live health and wellness application focused on medical tracking, user-centric flows, performance and stability in production.',
+    tags: ['React Native', 'API Integration', 'Health Tech'],
+    icon: Stethoscope,
+    category: 'mobile',
     featured: true,
     live: null,
-    source: 'https://github.com/masaiff210880',
-    download: siteConfig.owner.desktopDownloadUrl
+    source: null,
+    download: null
   },
   {
-    title: 'Trivida Corporation',
+    title: 'Chef App',
     description:
-      'Cross-platform desktop application for Trivida Corporation — a fast, responsive management experience with a native feel, built as an Electron desktop app.',
-    tags: ['Electron.js', 'Tailwind CSS', 'React', 'Vite'],
-    icon: Building2,
-    category: 'desktop',
+      'Food product purchasing app with seamless payment integration, cross-platform UI consistency and performance-focused fixes.',
+    tags: ['React Native', 'Payment Integration', 'Stripe API'],
+    icon: UtensilsCrossed,
+    category: 'mobile',
+    featured: true,
+    live: null,
+    source: null,
+    download: null
+  },
+  {
+    title: 'Petvesta',
+    description:
+      'Pet care platform where I worked on feature implementation, UI components and functionality improvements for a smoother user experience.',
+    tags: ['React Native', 'UI Components', 'API Integration'],
+    icon: PawPrint,
+    category: 'mobile',
     featured: false,
     live: null,
     source: null,
     download: null
   },
   {
-    title: 'American Distributor (Desktop)',
+    title: 'FMO App',
     description:
-      'Desktop distribution management app for American Distributor, streamlining catalog, orders and workflows in a smooth, cross-platform Electron build.',
-    tags: ['Electron.js', 'Tailwind CSS', 'React', 'Vite'],
-    icon: Package,
-    category: 'desktop',
+      'Financial and trading platform with optimized core components, real-time data updates and interactive dashboards.',
+    tags: ['React Native', 'Real-time Data', 'Dashboard'],
+    icon: TrendingUp,
+    category: 'mobile',
     featured: false,
     live: null,
-    source: null,
-    download: null
+    source: null
   },
   {
-    title: 'LMS — Learning Management (User Portal)',
+    title: 'Construction Web Portal',
     description:
-      'Modern LMS user interface for Sabeel TV where students browse, enroll and learn from structured courses with a responsive UI and secure integrations.',
-    tags: ['Next.js', 'Tailwind CSS', 'Node.js'],
-    icon: GraduationCap,
+      'React-based construction management portal with responsive project-tracking dashboards, resource allocation flows and manifest updates.',
+    tags: ['React.js', 'TypeScript', 'Responsive Dashboard'],
+    icon: HardHat,
     category: 'web',
-    featured: true,
-    live: 'https://sabeeltv.com/',
-    source: 'https://github.com/articulationpoint/sabeel_learning_frontend'
+    featured: false,
+    live: null,
+    source: null
   },
   {
-    title: 'Learning Management Mobile App',
+    title: 'Car Dekho App',
     description:
-      'Cross-platform LMS app with live classes, paid courses and streaming at scale for thousands of concurrent learners.',
-    tags: ['React Native', 'Zoom SDK', 'Razorpay'],
-    icon: GraduationCap,
+      'React Native app work covering splash screen configuration, boot sequence optimization, UI components and local environment setup.',
+    tags: ['React Native', 'Android Studio', 'Splash Screen'],
+    icon: Car,
     category: 'mobile',
     featured: false,
     live: null,
     source: null
   },
   {
-    title: 'NoteTracker — Order & Workflow',
+    title: 'Responsive Admin Dashboards',
     description:
-      'Mobile order and workflow system with role-based access for admins, employees and users — from request through verification.',
-    tags: ['React Native', 'NativeWind', 'Workflow'],
-    icon: ClipboardList,
-    category: 'mobile',
-    featured: false,
-    live: null,
-    source: null
-  },
-  {
-    title: 'LMS — Admin Portal',
-    description:
-      'Admin dashboard to manage courses, users and content for Sabeel TV, with analytics and management tools for instructors and admins.',
-    tags: ['React.js', 'Tailwind CSS', 'Express.js'],
+      'Reusable dashboard interfaces built with React.js, Redux Toolkit, Material UI and API integrations for production workflows.',
+    tags: ['React.js', 'Redux Toolkit', 'Material UI'],
     icon: LayoutDashboard,
     category: 'web',
     featured: false,
-    live: 'https://admin.sabeeltv.com/dashboard',
-    source: 'https://github.com/articulationpoint/sabeel_learning_admin'
-  },
-  {
-    title: 'American Distributors',
-    description:
-      'React Native e-commerce and distribution app with a Firebase backend, secure checkout and full App Store release workflow.',
-    tags: ['React Native', 'Firebase', 'Payments'],
-    icon: Package,
-    category: 'mobile',
-    featured: false,
     live: null,
     source: null
   },
   {
-    title: 'Smokevana',
+    title: 'Portfolio Desktop App',
     description:
-      'Mobile retail e-commerce with age verification, in-app payments and Firebase-backed integrations for regulated products.',
-    tags: ['React Native', 'Firebase', 'Xcode'],
-    icon: ShoppingBag,
-    category: 'mobile',
+      'Animated desktop portfolio built with Electron, React and Vite to present skills, projects, experience and contact details.',
+    tags: ['Electron', 'React.js', 'Vite'],
+    icon: MonitorCog,
+    category: 'desktop',
     featured: false,
     live: null,
-    source: null
-  },
-  {
-    title: 'Green Street Distro',
-    description:
-      'Distribution-focused React Native storefront with Firebase services, payments, compliance checkpoints and production release.',
-    tags: ['React Native', 'Firebase', 'App Store'],
-    icon: Truck,
-    category: 'mobile',
-    featured: false,
-    live: null,
-    source: null
-  },
-  {
-    title: 'HealthKart',
-    description:
-      'Online platform for authentic health and nutrition supplements — protein, weight-loss products, gym memberships and trainers.',
-    tags: ['React', 'Redux', 'MongoDB'],
-    icon: HeartPulse,
-    category: 'web',
-    featured: false,
-    live: 'https://frontend-vinaykumar7580.vercel.app/',
-    source: 'https://github.com/masaiff210880/defeated-interest-8343'
-  },
-  {
-    title: 'MedZ+',
-    description:
-      'Online health platform for ayurvedic, homeopathic, vitamins and nutrition supplements delivered at home.',
-    tags: ['React', 'Redux', 'Chakra UI'],
-    icon: Pill,
-    category: 'web',
-    featured: false,
-    live: 'https://medzplus.vercel.app/',
-    source: 'https://github.com/masaiff210880/-quick-jelly-9961'
-  },
-  {
-    title: 'Yaatra',
-    description:
-      'Online travel website where travelers can make airline, hotel and car-rental reservations.',
-    tags: ['JavaScript', 'HTML5', 'CSS3'],
-    icon: Plane,
-    category: 'web',
-    featured: false,
-    live: 'https://joyful-begonia-5f548b.netlify.app/fw22_0277home.html',
-    source: 'https://github.com/masaiff210880/flaky-suggestion-4282'
-  },
-  {
-    title: 'Glamour Beauty',
-    description:
-      'Popular e-commerce platform selling cosmetics across many brands and product categories.',
-    tags: ['React', 'Vite', 'CSS3'],
-    icon: Sparkles,
-    category: 'web',
-    featured: false,
-    live: 'https://glamourbeauty-app.vercel.app/',
-    source:
-      'https://github.com/masaiff210880/posh-title-8378/tree/main/GLAMOUR_BEAUTY/glamourbeauty-app'
+    source: null,
+    download: siteConfig.owner.desktopDownloadUrl
   }
 ]
 
-/** Work / education timeline (from ram-app.github.io). */
+/** Work / education timeline. */
 export const experience = [
   {
-    role: 'Frontend Developer',
-    company: 'Phantasm Solutions Pvt Ltd',
-    location: 'Vijayawada, Andhra Pradesh',
-    period: 'Feb 2023 — Jan 2026',
+    role: 'Software Developer',
+    company: 'Syncglob Private Limited',
+    location: 'Sri Ganganagar, Rajasthan',
+    period: '2 Years',
     description:
-      'Leading 5+ frontend teams for enterprise-level web and mobile application development — architecting responsive apps with React.js & Next.js and building cross-platform mobile apps with React Native, following modern best practices.',
-    tags: ['React.js', 'Next.js', 'React Native', 'Tailwind CSS', 'Material UI', 'Docker']
+      'Built and improved live React Native and web applications including Health Buddy, Petvesta, Chef App, FMO App, Construction Web Portal and Car Dekho App. Worked across mobile UI, web dashboards, API integration, payment integration, Android configuration and performance optimization.',
+    tags: ['React Native', 'React.js', 'TypeScript', 'Redux Toolkit', 'Stripe API', 'Material UI']
   },
   {
-    role: 'Full Stack Web Development',
-    company: 'Masai School',
-    location: 'Bengaluru, Karnataka',
-    period: '2022 — 2023',
+    role: 'Diploma in Web Development',
+    company: 'IEC Computer Centre',
+    location: '',
+    period: '6 Months',
     description:
-      'Completed an intensive full-stack web development program — built 10+ solo and collaborative real-world applications and mastered the React and Node.js ecosystem while working in agile teams.',
-    tags: ['React', 'JavaScript', 'Node.js', 'Express.js', 'HTML', 'CSS']
+      'Completed focused web development training covering frontend fundamentals, responsive UI and practical application building.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'React.js']
   },
   {
-    role: 'Computer Science Engineering',
-    company: 'Sams Institute of Technologies',
-    location: 'Varanasi, Uttar Pradesh',
-    period: '2018 — 2021',
-    description:
-      'Pursued Computer Science Engineering with a focus on frontend and backend development, building a strong foundation in programming fundamentals, data structures, algorithms and web technologies.',
-    tags: ['Python', 'JavaScript', 'Java', 'C++', 'HTML', 'CSS']
+    role: 'Bachelor of Arts (B.A.)',
+    company: 'Maharaja Ganga Singh University (MGSU)',
+    location: 'Rajasthan',
+    period: '2023',
+    description: 'Graduated with a Bachelor of Arts degree from MGSU with 60%.',
+    tags: ['Graduation', 'Communication', 'Problem Solving']
   }
 ]
 
 /** Social links. */
 export const socials = [
-  { name: 'GitHub', href: 'https://github.com/masaiff210880', icon: GithubIcon },
   {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/ram-surat-frontend-developer/',
+    href: 'https://www.linkedin.com/in/manish-kumar-005919265/',
     icon: LinkedinIcon
   },
-  { name: 'Portfolio', href: 'https://ram-app.github.io/', icon: Globe },
-  { name: 'Email', href: 'mailto:ram.surat.web@gmail.com', icon: Mail }
+  { name: 'Email', href: 'mailto:royalmanish714@gmail.com', icon: Mail }
 ]

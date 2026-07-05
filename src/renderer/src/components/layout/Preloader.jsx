@@ -142,7 +142,7 @@ function Preloader({ onDone }) {
             Building fast, scalable web, mobile &amp; desktop applications
           </p>
           <div className="mt-1 flex flex-wrap items-center justify-center gap-2">
-            {['React.js', 'Next.js', 'React Native', 'Electron.js', 'Node.js'].map((t) => (
+            {['React.js', 'React Native'].map((t) => (
               <span
                 key={t}
                 className="rounded-full border border-border bg-surface-2/60 px-2.5 py-1 text-xs font-medium text-muted"

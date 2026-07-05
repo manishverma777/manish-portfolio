@@ -1,5 +1,5 @@
-appId: com.ramsurat.app
-productName: Ram
+appId: com.manishkumar.portfolio
+productName: Manish Portfolio
 directories:
   buildResources: build
 files:
@@ -11,11 +11,11 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: Ram
+  executableName: Manish
 nsis:
-  artifactName: Ram-Setup.${ext}
-  shortcutName: Ram
-  uninstallDisplayName: Ram
+  artifactName: Manish-Setup.${ext}
+  shortcutName: Manish Portfolio
+  uninstallDisplayName: Manish Portfolio
   createDesktopShortcut: always
 mac:
   entitlementsInherit: build/entitlements.mac.plist
