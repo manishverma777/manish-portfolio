@@ -35,9 +35,7 @@ function fail(msg) {
 
 /** Read owner/repo from the `origin` remote URL. */
 function getRepo() {
-  const url = execSync('git config --get remote.origin.url', { cwd: ROOT })
-    .toString()
-    .trim()
+  const url = execSync('git config --get remote.origin.url', { cwd: ROOT }).toString().trim()
   const m = url.match(/github\.com[:/]([^/]+)\/(.+?)(?:\.git)?$/)
   if (!m) fail(`Could not parse owner/repo from remote URL: ${url}`)
   return { owner: m[1], repo: m[2] }

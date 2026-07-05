@@ -9,11 +9,12 @@ export const siteConfig = {
   logoInitials: 'A',
   // Profile photo shown on the intro + hero. Falls back to the name logo
   // (logoInitials) automatically if the image can't be loaded.
-  // Google Drive file id served via its direct image host.
-  profileImage: 'https://lh3.googleusercontent.com/d/1NobY_3oEaWCQ9jS5QEMPdHnCgbOyLmJK=s600',
+  // Self-hosted from src/renderer/public so it works offline (desktop app)
+  // and is reliably fetchable by social/search crawlers (web build).
+  profileImage: './profile.png',
   owner: {
     name: 'Ram Surat',
-    role: 'MERN Stack Developer',
+    role: 'Frontend Developer',
     tagline:
       'Frontend Developer with 3 years of experience building high-performance web, mobile and desktop applications with clean, delightful interfaces.',
     location: 'Mirzapur, Uttar Pradesh, India',
@@ -34,11 +35,11 @@ export const siteConfig = {
   },
   // Rotating job titles shown in the hero heading.
   roles: [
-    'MERN Stack Developer',
     'Frontend Developer',
+    'Frontend Engineer',
+    'React.js Developer',
     'Mobile App Developer',
-    'Desktop App Developer',
-    'Frontend Engineer'
+    'Desktop App Developer'
   ],
   // Short professional title shown in the header next to the avatar.
   roleShort: 'Frontend Developer',
